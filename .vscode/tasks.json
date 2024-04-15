@@ -1,0 +1,42 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "cppbuild",
+			"label": "C/C++: g++.exe build active file",
+			"command": "D:\\compiler\\MinGW\\bin\\g++.exe",
+			"args": [
+				"-fdiagnostics-color=always",
+				"-g",
+				"main.cpp",
+				"-I",
+				"${fileDirname}\\include",
+				"-I",
+				"${fileDirname}",
+				"-L",
+				"${fileDirname}\\lib",
+				"-l",
+				"sdl2",
+				"-l",
+				"sdl2main",
+				"-l",
+				"sdl2_ttf",
+				"-l",
+				"sdl2_image",
+				"-o",
+				"${fileDirname}\\bin\\${fileBasenameNoExtension}.exe"
+			],
+			"options": {
+				"cwd": "${fileDirname}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"detail": "compiler: D:\\compiler\\MinGW\\bin\\g++.exe"
+		}
+	]
+}
