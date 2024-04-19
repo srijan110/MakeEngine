@@ -3,36 +3,13 @@
 #include "types.hpp"
 #include "keyboard.hpp"
 
-SDL_Event SDL_event;
-bool IsPressed = false;
-KeyMap key = NONE;
+#ifndef EVENT_HPP
+#define EVENT_HPP
 
-int UpdateEvent()
-{
-    SDL_PollEvent(&SDL_event);
+extern KeyMap key;
 
-    if (SDL_event.type == SDL_KEYDOWN && !IsPressed) 
-    {
-        key = KeyboardUpdate(SDL_event);
-        IsPressed = true;
-    }
-    else if (SDL_event.type == SDL_KEYUP)
-    {
-        key = NONE;
-        IsPressed = false;
-    }
+int UpdateEvent();
 
-    return 0;
-}
+bool IsQuiting();
 
-bool IsQuiting()
-{
-    if (SDL_event.type == SDL_QUIT) return true;
-    else return false;
-}
-
-bool IsKeyPressing(KeyMap Key)
-{
-    if (key == Key) return true;
-    else return false;
-}
+#endif
