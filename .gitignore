@@ -1,4 +1,4 @@
 /src/main.cpp
-/bin/main.exe
+/bin/*.exe
 /.vscode
 /trial
