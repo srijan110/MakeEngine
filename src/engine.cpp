@@ -1,5 +1,6 @@
 #include "MakeEngine\engine.hpp"
 
+
 SDL_Window *Window;
 Surface WinSurf;
 

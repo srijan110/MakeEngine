@@ -1,5 +1,7 @@
 #pragma once
 #include <SDL2/SDL.h>
+#include <string>
+
 #include "event.hpp"
 #include "rect.hpp"
 #include "types.hpp"
@@ -7,18 +9,23 @@
 #ifndef ENGINE_HPP
 #define ENGINE_HPP
 
-extern SDL_Window *Window;
-extern Surface WinSurf;
+class Engine {
+    private:
+        std::string Title;
+        Coordinate Size;
 
-int Init();
+        SDL_Window *Window;
+        Surface WinSurf;
 
-Surface CreateWindow(const char * Title, int Width, int Height);
+    public:
+        Engine(std::string Title, Coordinate Size);
+        ~Engine();
 
-int Quit();
+        int UpdateWindow();
+        int ClearWindow(Color Fill_Color);
 
-int UpdateWindow();
-
-int ClearWindow(Color Fill_Color);
+        Surface GetSurface();
+};
 
 #endif
 
