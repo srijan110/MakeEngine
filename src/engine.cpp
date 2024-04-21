@@ -1,33 +1,26 @@
 #include "MakeEngine\engine.hpp"
+#include <string>
 
-
-SDL_Window *Window;
-Surface WinSurf;
-
-int Init(){
+Engine::Engine(std::string Title, Coordinate Size)
+{
     SDL_Init(SDL_INIT_EVERYTHING);
-    return 0;
+    Window = SDL_CreateWindow(Title.c_str(), SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, Size.x, Size.y, SDL_WINDOW_SHOWN);
+    WinSurf = SDL_GetRenderer(Window);
 }
 
-Surface CreateWindow(const char * Title, int Width, int Height){
-    Window = SDL_CreateWindow(Title, SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, Width, Height, SDL_WINDOW_SHOWN);
-    WinSurf = SDL_GetWindowSurface(Window);
-    return WinSurf;
-}
-
-int Quit(){
-    SDL_FreeSurface(WinSurf);
+Engine::~Engine(){
+    SDL_DestroyRenderer(WinSurf);
     SDL_DestroyWindow(Window);
     SDL_Quit();
+}
+
+int Engine::UpdateWindow(){
+    SDL_RenderPresent(WinSurf);
     return 0;
 }
 
-int UpdateWindow(){
-    SDL_UpdateWindowSurface(Window);
-    return 0;
-}
-
-int ClearWindow(Color Fill_Color){
-    SDL_FillRect(WinSurf, NULL, SDL_MapRGB(WinSurf -> format, Fill_Color.Red, Fill_Color.Green, Fill_Color.Blue));
+int Engine::ClearWindow(Color Fill_Color){
+    SDL_SetRenderDrawColor(WinSurf, Fill_Color.Red, Fill_Color.Blue, Fill_Color.Green, Fill_Color.Alpha);
+    SDL_RenderClear(WinSurf);
     return 0;
 }

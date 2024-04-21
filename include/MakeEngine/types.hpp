@@ -5,6 +5,7 @@ typedef struct {
     unsigned short int Red;
     unsigned short int Green;
     unsigned short int Blue;
+    unsigned short int Alpha;
 } Color;
 
 typedef struct {
