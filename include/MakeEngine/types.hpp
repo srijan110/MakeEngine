@@ -13,8 +13,6 @@ typedef struct {
     int y;
 } Coordinate;
 
-typedef SDL_Rect Rect;
-
 typedef SDL_Surface* Surface;
 
 enum KeyMap

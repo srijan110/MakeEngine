@@ -1,27 +1,38 @@
 #include <SDL2/SDL.h>
 #include "MakeEngine\types.hpp"
+#include "rect.hpp"
 
-int DrawRect(Rect rect, Surface surface, Color color)
+Rect::Rect(Coordinate Position, Coordinate Size)
+{
+    rect = {Position.x, Position.y, Size.x, Size.y};
+}
+
+int Rect::DrawRect(Surface surface, Color color)
 {
     SDL_FillRect(surface, &rect, SDL_MapRGB(surface -> format, color.Red, color.Green, color.Blue));
 }
 
-bool IsColliding(Rect RectA, Rect RectB)
+bool Rect::IsRectColliding(Rect RectA)
 {
-    if(SDL_HasIntersection(&RectA, &RectB)) return true;
+    if(SDL_HasIntersection(&RectA.GetRect(), &rect)) return true;
     else return false;
 }
 
-Rect MoveRect(Rect rect, Coordinate coordinate)
+int Rect::MoveRect(Coordinate coordinate)
 {
     rect.x += coordinate.x;
     rect.y += coordinate.y;
-    return rect;
+    return 0;
 }
 
-Rect GoToRect(Rect rect, Coordinate coordinate)
+int Rect::GoToRect(Coordinate coordinate)
 {
     rect.x = coordinate.x;
     rect.y = coordinate.y;
+    return 0;
+}
+
+SDL_Rect Rect::GetRect()
+{
     return rect;
 }
