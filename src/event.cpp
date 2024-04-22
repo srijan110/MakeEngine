@@ -12,7 +12,7 @@ int Event::UpdateEvent()
 
     if (SDL_event.type == SDL_KEYDOWN && !IsPressed) 
     {
-        key = KeyboardUpdate(SDL_event);
+        key = keyboard.KeyboardUpdate(SDL_event);
         IsPressed = true;
     }
     else if (SDL_event.type == SDL_KEYUP)

@@ -5,8 +5,14 @@
 #ifndef KEYBOARD_HPP
 #define KEYBOARD_HPP
 
-KeyMap KeyboardUpdate(SDL_Event Event);
-
-bool IsKeyPressing(KeyMap Key);
+class Keyboard
+{
+private:
+    KeyMap key;
+public:
+    KeyMap KeyboardUpdate(SDL_Event Event);
+    bool IsKeyPressing(KeyMap Key);
+    int UpdateKey();
+};
 
 #endif
