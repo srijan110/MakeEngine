@@ -6,10 +6,15 @@
 #ifndef EVENT_HPP
 #define EVENT_HPP
 
-extern KeyMap key;
-
-int UpdateEvent();
-
-bool IsQuiting();
+class Event
+{
+private:
+    SDL_Event SDL_event;
+    bool IsPressed;
+    KeyMap key;
+public:
+    int UpdateEvent();
+    bool IsQuiting();
+};
 
 #endif

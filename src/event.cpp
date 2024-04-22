@@ -6,7 +6,7 @@ SDL_Event SDL_event;
 bool IsPressed;
 KeyMap key;
 
-int UpdateEvent()
+int Event::UpdateEvent()
 {
     SDL_PollEvent(&SDL_event);
 
@@ -22,9 +22,9 @@ int UpdateEvent()
     }
 
     return 0;
-}
+};
 
-bool IsQuiting()
+bool Event::IsQuiting()
 {
     if (SDL_event.type == SDL_QUIT) return true;
     else return false;
