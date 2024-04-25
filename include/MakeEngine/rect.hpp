@@ -10,7 +10,6 @@ private:
     SDL_Rect rect;
 public:
     Rect(Coordinate Position, Coordinate Size);
-    ~Rect();
     int DrawRect(Surface surface, Color color);
     bool IsRectColliding(Rect RectA);
     int MoveRect(Coordinate coordinate);

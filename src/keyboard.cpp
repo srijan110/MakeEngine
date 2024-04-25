@@ -48,6 +48,5 @@ KeyMap Keyboard::KeyboardUpdate(SDL_Event Event)
 
 bool Keyboard::IsKeyPressing(KeyMap Key)
 {
-    if (key == Key) return true;
-    else return false;
+    return key == Key;
 }

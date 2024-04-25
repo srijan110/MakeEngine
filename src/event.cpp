@@ -26,8 +26,10 @@ int Event::UpdateEvent()
 
 bool Event::IsQuiting()
 {
-    if (SDL_event.type == SDL_QUIT) return true;
-    else return false;
+    return SDL_event.type == SDL_QUIT;
 }
 
-
+bool Event::IsKeyPressing(KeyMap Key)
+{
+    return keyboard.IskeyPressing(Key);
+}

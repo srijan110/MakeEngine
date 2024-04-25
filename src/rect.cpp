@@ -9,6 +9,7 @@ Rect::Rect(Coordinate Position, Coordinate Size)
 
 int Rect::DrawRect(Surface surface, Color color)
 {
+    SDL_Rect result = {rect.x, rect.y, rect.w, rect.h};
     SDL_FillRect(surface, &rect, SDL_MapRGB(surface -> format, color.Red, color.Green, color.Blue));
 }
 

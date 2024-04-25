@@ -16,6 +16,7 @@ private:
 public:
     int UpdateEvent();
     bool IsQuiting();
+    bool IsKeyPressing(KeyMap key);
 };
 
 #endif

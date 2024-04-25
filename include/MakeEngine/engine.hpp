@@ -5,6 +5,7 @@
 #include "event.hpp"
 #include "rect.hpp"
 #include "types.hpp"
+#include "player.hpp"
 
 #ifndef ENGINE_HPP
 #define ENGINE_HPP
