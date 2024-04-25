@@ -31,5 +31,5 @@ bool Event::IsQuiting()
 
 bool Event::IsKeyPressing(KeyMap Key)
 {
-    return keyboard.IskeyPressing(Key);
+    return keyboard.IsKeyPressing(Key);
 }
