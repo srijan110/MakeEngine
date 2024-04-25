@@ -13,10 +13,13 @@ private:
     SDL_Event SDL_event;
     bool IsPressed;
     KeyMap key;
+    Uint64 start = 0;
+
 public:
     int UpdateEvent();
     bool IsQuiting();
     bool IsKeyPressing(KeyMap key);
+    int SetFPS(short int FPS);
 };
 
 #endif

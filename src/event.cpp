@@ -1,6 +1,8 @@
 #include <SDL2/SDL.h>
+#include <math.h>
+
 #include "MakeEngine\types.hpp"
-#include "MakeEngine\keyboard.hpp"
+#include "MakeEngine\keyboard.hpp" 
 
 SDL_Event SDL_event;
 bool IsPressed;
@@ -32,4 +34,16 @@ bool Event::IsQuiting()
 bool Event::IsKeyPressing(KeyMap Key)
 {
     return keyboard.IsKeyPressing(Key);
+}
+
+int Event::SetFPS(short int FPS)
+{
+	Uint64 end = SDL_GetPerformanceCounter();
+
+	float elapsedMS = (end - start) / (float)SDL_GetPerformanceFrequency() * 1000.0f;
+
+	// Cap to 60 FPS
+	SDL_Delay(floor((FPS/1000) - elapsedMS));
+
+    start = SDL_GetPerformanceCounter();
 }
