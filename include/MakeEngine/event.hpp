@@ -9,7 +9,6 @@
 class Event
 {
 private:
-    Keyboard keyboard;
     SDL_Event SDL_event;
     bool IsPressed;
     KeyMap key;

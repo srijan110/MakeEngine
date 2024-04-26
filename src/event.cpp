@@ -1,12 +1,14 @@
 #include <SDL2/SDL.h>
 #include <math.h>
 
-#include "MakeEngine\types.hpp"
 #include "MakeEngine\keyboard.hpp" 
+#include "MakeEngine\types.hpp"
+#include "MakeEngine\event.hpp"
 
 SDL_Event SDL_event;
 bool IsPressed;
 KeyMap key;
+Keyboard keyboard;
 
 int Event::UpdateEvent()
 {

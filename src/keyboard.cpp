@@ -1,6 +1,7 @@
 #include <SDL2/SDL.h>
 #include "MakeEngine\types.hpp"
 #include "MakeEngine\event.hpp"
+#include "MakeEngine\keyboard.hpp"
 
 KeyMap Keyboard::KeyboardUpdate(SDL_Event Event)
 {

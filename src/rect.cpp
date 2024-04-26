@@ -1,6 +1,6 @@
 #include <SDL2/SDL.h>
 #include "MakeEngine\types.hpp"
-#include "rect.hpp"
+#include "MakeEngine\rect.hpp"
 
 Rect::Rect(Coordinate Position, Coordinate Size)
 {
@@ -15,7 +15,8 @@ int Rect::DrawRect(Surface surface, Color color)
 
 bool Rect::IsRectColliding(Rect RectA)
 {
-    if(SDL_HasIntersection(&RectA.GetRect(), &rect)) return true;
+    SDL_Rect rect_a = RectA.GetRect();
+    if(SDL_HasIntersection(&rect_a, &rect)) return true;
     else return false;
 }
 
