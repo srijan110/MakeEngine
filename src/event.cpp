@@ -40,12 +40,8 @@ bool Event::IsKeyPressing(KeyMap Key)
 
 int Event::SetFPS(short int FPS)
 {
-	Uint64 end = SDL_GetPerformanceCounter();
-
-	float elapsedMS = (end - start) / (float)SDL_GetPerformanceFrequency() * 1000.0f;
-
-	// Cap to 60 FPS
-	SDL_Delay(floor((FPS/1000) - elapsedMS));
-
-    start = SDL_GetPerformanceCounter();
+    int desiredDelta = 1000 / FPS;
+    int delta = SDL_GetTicks() - start;
+    if(delta < desiredDelta) SDL_Delay(desiredDelta - delta);
+    start = SDL_GetTicks();
 }

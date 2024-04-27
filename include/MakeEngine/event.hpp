@@ -12,7 +12,7 @@ private:
     SDL_Event SDL_event;
     bool IsPressed;
     KeyMap key;
-    Uint64 start = 0;
+    Uint32 start = 0;
 
 public:
     int UpdateEvent();
