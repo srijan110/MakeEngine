@@ -13,7 +13,7 @@ typedef struct {
     int y;
 } Coordinate;
 
-typedef SDL_Surface* Surface;
+typedef SDL_Renderer* Surface;
 
 enum KeyMap
 {

@@ -1,5 +1,7 @@
 #pragma once
 #include <SDL2/SDL.h>
+#include <iostream>
+
 #include "types.hpp"
 #include "event.hpp"
 
@@ -9,10 +11,9 @@
 class Keyboard
 {
 private:
-    KeyMap key;
+    
 public:
     KeyMap KeyboardUpdate(SDL_Event Event);
-    bool IsKeyPressing(KeyMap Key);
 };
 
 #endif

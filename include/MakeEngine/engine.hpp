@@ -15,8 +15,8 @@ class Engine {
         std::string Title;
         Coordinate Size;
 
-        SDL_Window *Window;
-        SDL_Renderer *WinSurf;
+        SDL_Window *Window = nullptr;
+        Surface WinSurf = nullptr;
 
     public:
         Engine(std::string Title, Coordinate Size);
@@ -24,6 +24,7 @@ class Engine {
 
         int UpdateWindow();
         int ClearWindow(Color Fill_Color);
+        Surface GetSurface();
 };
 
 #endif

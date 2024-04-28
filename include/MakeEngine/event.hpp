@@ -1,5 +1,7 @@
 #pragma once
 #include <SDL2/SDL.h>
+#include <iostream>
+
 #include "types.hpp"
 #include "keyboard.hpp"
 
@@ -13,6 +15,7 @@ private:
     bool IsPressed;
     KeyMap key;
     Uint32 start = 0;
+    int Delta;
 
 public:
     int UpdateEvent();

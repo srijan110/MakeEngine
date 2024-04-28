@@ -14,8 +14,10 @@ private:
     KeyMap Down;
     KeyMap Left; 
     KeyMap Right;
+    double Speed; 
 public:
-    Player(Rect rect, KeyMap UP, KeyMap DOWN, KeyMap LEFT, KeyMap RIGHT);
+    Player(Rect rect, KeyMap UP, KeyMap DOWN, KeyMap LEFT, KeyMap RIGHT, double Speed);
+    int SetSpeed(double value);
     int Update(Event event);
     Rect GetRect();
 };

@@ -9,8 +9,10 @@ Rect::Rect(Coordinate Position, Coordinate Size)
 
 int Rect::DrawRect(Surface surface, Color color)
 {
-    SDL_Rect result = {rect.x, rect.y, rect.w, rect.h};
-    SDL_FillRect(surface, &rect, SDL_MapRGB(surface -> format, color.Red, color.Green, color.Blue));
+    SDL_SetRenderDrawColor(surface, color.Red, color.Blue, color.Green, color.Alpha);
+    SDL_RenderDrawRect(surface, &rect);
+
+    return 0;
 }
 
 bool Rect::IsRectColliding(Rect RectA)
