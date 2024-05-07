@@ -4,6 +4,8 @@
 Engine::Engine(std::string Title, Coordinate Size)
 {
     SDL_Init(SDL_INIT_EVERYTHING);
+    IMG_Init(IMG_INIT_PNG);
+    
     SDL_CreateWindowAndRenderer(Size.x, Size.y, 0, &Window, &WinSurf);
     SDL_SetWindowTitle(Window, Title.c_str());
 }
